@@ -52,19 +52,25 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <link rel="shortcut icon" href="/faviconCustom.png" type="image/x-icon" />
-      <TanStackProvider>
-        <ThemeProvider>
-          <body className={`min-h-dvh flex flex-cd ${roboto.variable}`}>
+      <head>
+        <link
+          rel="shortcut icon"
+          href="/faviconCustom.png"
+          type="image/x-icon"
+        />
+      </head>
+      <body className={`min-h-dvh flex flex-cd ${roboto.variable}`}>
+        <TanStackProvider>
+          <ThemeProvider>
             <SmoothScroll>
               <Header />
               <main className="flex-1 page-content">{children}</main>
               {modal}
               <Footer />
             </SmoothScroll>
-          </body>
-        </ThemeProvider>
-      </TanStackProvider>
+          </ThemeProvider>
+        </TanStackProvider>
+      </body>
     </html>
   );
 }

@@ -1,10 +1,12 @@
 .footer {
   padding: 40px;
-  background-color: var(--color-bg);
+  /* background-color: var(--color-bg); */
   text-align: center;
   font-size: 14px;
   color: var(--color-text-secondary);
   border-top: 0.5px solid var(--color-border);
+  background-color: transparent;
+  background: transparent;
 }
 
 .content {
