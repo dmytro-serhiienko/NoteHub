@@ -1,0 +1,31 @@
+.notWrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.title {
+  font-size: 330px;
+  text-align: center;
+  margin: 0;
+}
+
+.description {
+  font-size: 40px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.back {
+  position: absolute;
+  font-weight: 900;
+  font-size: 1200px;
+  text-align: center;
+  margin: 0 auto;
+  color: rgba(248, 249, 250, 0.1);
+}

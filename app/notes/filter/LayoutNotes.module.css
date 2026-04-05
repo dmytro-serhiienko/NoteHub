@@ -1,0 +1,52 @@
+.container {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+
+  position: relative;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: var(--color-surface);
+  /* border: 0.5px solid #434343; */
+  color: var(--color-text);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0 20px 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  text-align: center;
+  padding-top: 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.notesWrapper {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.decor {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  font-weight: 900;
+  font-size: 1100px;
+  text-align: center;
+  margin: 0;
+  color: var(--color-decor);
+  pointer-events: none;
+  user-select: none;
+  line-height: 1;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  white-space: nowrap;
+}

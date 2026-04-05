@@ -1,0 +1,48 @@
+.footer {
+  padding: 40px;
+  background-color: var(--color-bg);
+  text-align: center;
+  font-size: 14px;
+  color: var(--color-text-secondary);
+  border-top: 0.5px solid var(--color-border);
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer a {
+  color: var(--color-accent);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+.p {
+  margin: 0;
+}
+
+.rightWrap {
+  display: flex;
+  gap: 20px;
+}
+
+.icon {
+  font-size: 18px;
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
+}
+
+.iconFooter {
+  &:hover .icon {
+    color: var(--color-accent);
+    transform: scale(1.3);
+  }
+}
