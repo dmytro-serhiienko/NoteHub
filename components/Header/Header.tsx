@@ -9,7 +9,7 @@ import { LuMoon } from "react-icons/lu";
 import { useThemeStore } from "@/lib/themeStore";
 import { FaGithub } from "react-icons/fa";
 
-import AuthNavigation from "../AuthNavigation/AuthNavigation";
+import AuthNavigation from "../AuthProvider/AuthNavigation";
 
 export default function Header() {
   const { theme, toggleTheme } = useThemeStore();

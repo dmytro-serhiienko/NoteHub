@@ -4,7 +4,7 @@ import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useAuthStore } from "@/lib/store/authStore";
 import { logout, getMe } from "@/lib/api/clientApi";
-import css from "./AuthNavigation.module.css";
+import css from "./AuthProvider.module.css";
 import { MdOutlineLogout } from "react-icons/md";
 
 export default function AuthNavigation() {
