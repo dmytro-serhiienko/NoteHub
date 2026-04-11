@@ -2,6 +2,7 @@ import "./globals.css";
 import { SmoothScroll } from "@/components/ui/SmoothScroll/SmoothScroll";
 import type { Metadata } from "next";
 import TanStackProvider from "@/components/TanStackProvider/TanStackProvider";
+import { AuthProvider } from "@/components/AuthProvider/AuthProvider";
 import ThemeProvider from "@/components/ThemeProvider/ThemeProvider";
 import Footer from "@/components/Footer/Footer";
 import Header from "@/components/Header/Header";
@@ -61,14 +62,16 @@ export default function RootLayout({
       </head>
       <body className={`min-h-dvh flex flex-cd ${roboto.variable}`}>
         <TanStackProvider>
-          <ThemeProvider>
-            <SmoothScroll>
-              <Header />
-              <main className="flex-1 page-content">{children}</main>
-              {modal}
-              <Footer />
-            </SmoothScroll>
-          </ThemeProvider>
+          <AuthProvider>
+            <ThemeProvider>
+              <SmoothScroll>
+                <Header />
+                <main className="flex-1 page-content">{children}</main>
+                {modal}
+                <Footer />
+              </SmoothScroll>
+            </ThemeProvider>
+          </AuthProvider>
         </TanStackProvider>
       </body>
     </html>

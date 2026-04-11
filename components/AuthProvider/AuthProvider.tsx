@@ -1,65 +1,48 @@
 "use client";
-import { useEffect } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { useAuthStore } from "@/lib/store/authStore";
-import { logout, getMe } from "@/lib/api/clientApi";
-import css from "./AuthProvider.module.css";
-import { MdOutlineLogout } from "react-icons/md";
 
-export default function AuthNavigation() {
-  const router = useRouter();
-  const { isAuthenticated, user } = useAuthStore();
-  const clearIsAuthenticated = useAuthStore(
-    (state) => state.clearIsAuthenticated,
-  );
-  const setUser = useAuthStore((state) => state.setUser);
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
+import { useAuthStore } from "@/lib/store/authStore";
+import { checkSession, getMe } from "@/lib/api/clientApi";
+
+export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
+  const { setUser, clearIsAuthenticated } = useAuthStore();
+  const [isLoading, setIsLoading] = useState(true);
+  const pathname = usePathname();
 
   useEffect(() => {
-    if (!isAuthenticated) {
-      getMe()
-        .then((user) => setUser(user))
-        .catch(() => {});
-    }
-  }, [isAuthenticated, setUser]);
+    const initAuth = async () => {
+      try {
+        const session = await checkSession();
+        if (session) {
+          const user = await getMe();
+          setUser(user);
+        } else {
+          clearIsAuthenticated();
+        }
+      } catch {
+        clearIsAuthenticated();
+      } finally {
+        setIsLoading(false);
+      }
+    };
+    initAuth();
+  }, [pathname, setUser, clearIsAuthenticated]);
 
-  const handleLogout = async () => {
-    await logout();
-    clearIsAuthenticated();
-    router.push("/sign-in");
-  };
-
-  if (isAuthenticated) {
+  if (isLoading) {
     return (
-      <>
-        <li className={css.navigationItem}>
-          <Link href="/profile" prefetch={false} className={css.navigationLink}>
-            Profile
-          </Link>
-        </li>
-        <li className={css.navigationItem}>
-          <p className={css.userEmail}>{user?.email}</p>
-          <button className={css.logoutButton} onClick={handleLogout}>
-            Logout
-            <MdOutlineLogout className={css.iconLogout} />
-          </button>
-        </li>
-      </>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          height: "100vh",
+        }}
+      >
+        <p>Loading...</p>
+      </div>
     );
   }
 
-  return (
-    <>
-      <li className={css.navigationItem}>
-        <Link href="/sign-in" prefetch={false} className={css.navigationLink}>
-          Login
-        </Link>
-      </li>
-      <li className={css.navigationItem}>
-        <Link href="/sign-up" prefetch={false} className={css.navigationLink}>
-          Sign up
-        </Link>
-      </li>
-    </>
-  );
-}
+  return <>{children}</>;
+};
