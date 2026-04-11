@@ -9,6 +9,8 @@ import { LuMoon } from "react-icons/lu";
 import { useThemeStore } from "@/lib/themeStore";
 import { FaGithub } from "react-icons/fa";
 
+import AuthNavigation from "../AuthNavigation/AuthNavigation";
+
 export default function Header() {
   const { theme, toggleTheme } = useThemeStore();
 
@@ -58,6 +60,7 @@ export default function Header() {
               Notes
             </Link>
           </li>
+          <AuthNavigation />
         </ul>
       </nav>
     </header>

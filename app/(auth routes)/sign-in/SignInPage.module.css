@@ -1,0 +1,147 @@
+.mainContent {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 400px;
+  width: 100%;
+  margin: 40px auto;
+  padding: 34px;
+  background-color: var(--color-surface);
+  /* border: 1px solid var(--color-border); */
+  border-radius: 10px;
+  /* box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05); */
+}
+
+.formTitle {
+  font-size: 24px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 8px;
+  color: var(--color-text);
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--color-text);
+}
+
+.input {
+  margin-top: 4px;
+  padding: 8px 12px;
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  background-color: var(--color-item-bg);
+
+  font-size: 16px;
+  outline: none;
+  color: var(--color-text);
+  transition: all 0.3s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: var(--color-item-bg-hover);
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.submitButton {
+  padding: 8px 16px;
+  font-size: 16px;
+  background-color: var(--color-accent);
+  color: var(--color-text);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-accent-hover);
+    transform: translateY(-3px);
+  }
+}
+
+.error {
+  color: var(--color-error);
+  font-size: 12px;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* DECOR */
+.decor1,
+.decor2,
+.decor3,
+.decor4,
+.decor5 {
+  position: absolute;
+  font-weight: 900;
+  font-size: 100px;
+  text-align: center;
+  margin: 0;
+  color: var(--color-hero-decorText);
+  pointer-events: none;
+  user-select: none;
+
+  z-index: -1;
+}
+
+.decor1 {
+  top: 15%;
+  left: 20%;
+  transform: translateX(-20%) translateY(-15%) rotate(-10deg);
+}
+
+.decor2 {
+  top: 10%;
+  left: 70%;
+  transform: translateX(-50%) translateY(-10%) rotate(5deg);
+}
+
+.decor3 {
+  top: 60%;
+  left: 5%;
+  transform: translateX(-5%) translateY(-60%) rotate(8deg);
+}
+
+.decor4 {
+  top: 60%;
+  right: 5%;
+  transform: translateX(5%) translateY(-60%) rotate(-5deg);
+}
+
+.decor5 {
+  top: 84%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-84%) rotate(-5deg);
+}
+
+.formLogoWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.formLogo {
+  font-size: 30px;
+  color: var(--color-accent);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  padding: 10px;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+}

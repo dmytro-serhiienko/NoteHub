@@ -5,8 +5,6 @@ import { RiQuillPenAiLine } from "react-icons/ri";
 // FOR GSAP
 import { useEffect } from "react";
 import { gsap } from "gsap";
-import { TextPlugin } from "gsap/TextPlugin";
-gsap.registerPlugin(TextPlugin);
 
 export default function Home() {
   useEffect(() => {

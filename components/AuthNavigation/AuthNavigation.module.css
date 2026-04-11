@@ -1,0 +1,54 @@
+.userEmail {
+  color: var(--color-accent-hover);
+  margin-right: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.logoutButton {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  border-radius: 10px;
+  padding: 8px 18px;
+  color: var(--color-text);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    background-color: var(--color-nav-bg-hover);
+    border-color: var(--color-item-bg-hover);
+    color: var(--color-text);
+    transform: translateY(-3px);
+  }
+}
+
+.iconLogout {
+  font-size: 20px;
+  color: var(--color-text);
+}
+
+.navigationItem {
+  display: flex;
+  align-items: center;
+}
+
+.navigationLink {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 15px;
+  padding: 8px 18px;
+  transition: all 0.3s ease-in-out;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: var(--color-nav-bg-hover);
+    border-color: var(--color-item-bg-hover);
+    color: var(--color-text);
+    transform: translateY(-3px);
+  }
+}

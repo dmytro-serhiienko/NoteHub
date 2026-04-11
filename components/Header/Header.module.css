@@ -4,7 +4,6 @@
   align-items: center;
   padding: 16px 32px;
   background-color: var(--color-bg);
-  border-bottom: 1px solid var(--color-border);
 }
 
 .logo {
@@ -47,18 +46,18 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-}
 
-.navLink:hover {
-  background-color: var(--color-nav-bg-hover);
-  border-color: var(--color-item-bg-hover);
-  color: var(--color-text);
-  transform: translateY(-3px);
-}
+  &:hover {
+    background-color: var(--color-nav-bg-hover);
+    border-color: var(--color-item-bg-hover);
+    color: var(--color-text);
+    transform: translateY(-3px);
+  }
 
-.navLink:active {
-  transform: translateY(0);
-  background-color: var(--color-nav-bg-active);
+  &:active {
+    transform: translateY(0);
+    background-color: var(--color-nav-bg-active);
+  }
 }
 
 .navLink.active {
